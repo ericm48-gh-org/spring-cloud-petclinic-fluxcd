@@ -22,3 +22,22 @@ spec:
           image: ghcr.io/ericm48-gh-org/spring-cloud-petclinic-service:3.0.8-RELEASE
           ports:
             - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-cloud-petclinic-service
+  annotations:
+        prometheus.io/scrape: 'true'
+  labels:
+    name: spring-cloud-petclinic-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: spring-cloud-petclinic-service
+    version: green
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+      protocol: TCP
