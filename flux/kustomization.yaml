@@ -3,7 +3,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
 metadata:
   name: spring-cloud-petclinic-service
-  namespace: flux-system
+  namespace: kommander-flux #flux-systemflux-system
 spec:
   interval: 5m0s
   path: "./blue"
@@ -11,4 +11,4 @@ spec:
   sourceRef:
     kind: GitRepository
     name: spring-cloud-petclinic-fluxcd
-    namespace: flux-system
+    namespace: kommander-flux #flux-system

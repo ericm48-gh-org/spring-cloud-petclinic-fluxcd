@@ -2,11 +2,11 @@ apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
   name: spring-cloud-petclinic-fluxcd
-  namespace: flux-system
+  namespace: kommander-flux #flux-system
 spec:
   interval: 1m0s
   url: https://github.com/ericm48-gh-org/spring-cloud-petclinic-fluxcd.git
   ref:
     branch: main
   secretRef:
-    name: flux-system
+    namespace: kommander-flux #flux-system
