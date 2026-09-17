@@ -6,7 +6,7 @@ metadata:
   namespace: kommander-flux #flux-systemflux-system
 spec:
   interval: 5m0s
-  path: "./blue"
+  path: "./green"
   prune: true
   sourceRef:
     kind: GitRepository
